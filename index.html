@@ -1,0 +1,58 @@
+<!doctype html>
+
+<html lang='en'>
+	
+	<head>
+
+		<meta charset='UTF-8' />
+		
+		<title>Get Down!</title>
+		
+		<link rel="stylesheet" type="text/css" href="styles.css" />		
+		
+	</head>
+
+	<body>	 
+		
+		<canvas id='canvas' height='640px' width='384px' style='background: textures/bkgd.jpg' ></canvas>
+		<div id='arena' height='640px' width='384px'></div>
+		<div id='player' height='32px' width='32px'></div>
+			
+		<script src="engine.js"></script>
+
+		<script>
+			// Need to generate 32 rows of 20 columns each
+			// first 10 rows are empty
+			
+			var rows = 20;		
+			var cols = 12;
+			
+			for (r = 0; r < 11; r++) {
+				map[r] = new Array();
+				for (c = 0; c < cols; c++) {
+					newTile = createTile(1);
+					map[r][c] = newTile;
+				}
+			}
+			
+			for (r = 11; r < rows; r++) {
+				map[r] = new Array();
+				for (c = 0; c < cols; c++) {
+					newTile = createTile(3);
+					map[r][c] = newTile;
+				}
+			}
+			
+			// Load listener
+			window.addEventListener('load', function() {
+				startEngine();
+			}, false);
+			
+			// Begin animation loop
+			window.requestAnimationFrame(animate);
+			
+		</script>
+	
+	</body>
+	
+</html>
