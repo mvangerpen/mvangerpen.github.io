@@ -1,0 +1,8 @@
+
+#canvas {
+	border: 1px solid black;
+	margin-left: 0;
+	width: 400px;
+	height: 640px;
+	background: url('textures/bkgd.jpg');
+}
